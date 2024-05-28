@@ -1,0 +1,163 @@
+:root {
+  --main-font: "Press Start 2P", Arial, Helvetica, sans-serif;
+  --bg-color: #f2f2f2;
+  --border-color: #d0d0d0;
+  --button-bg-color: #ffab00;
+  --button-hover-bg-color: #e69900;
+  --button-text-color: #000;
+  --card-gradient-start: #ffffff;
+  --card-gradient-end: #e6e6e6;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --text-color: #333333;
+  --error-color: #e57373;
+  --retro-blue: #7fa7bf;
+  --retro-pink: #bf7f9f;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.weatherForm {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cityInput {
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  margin: 10px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #ffffff;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.cityInput:focus {
+  border-color: var(--button-bg-color);
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--button-hover-bg-color);
+  transform: scale(1.05);
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    var(--card-gradient-start),
+    var(--card-gradient-end)
+  );
+  padding: 50px;
+  box-shadow: 0 0 20px var(--shadow-color);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px var(--shadow-color);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.25rem;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.cityDisplay,
+.tempDisplay {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.humidityDisplay {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.descDisplay {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.weatherEmoji {
+  margin: 0;
+  font-size: 5rem;
+}
+
+.errorDisplay {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--error-color);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cityDisplay,
+  .tempDisplay {
+    font-size: 2rem;
+  }
+
+  .descDisplay {
+    font-size: 1.25rem;
+  }
+
+  .weatherEmoji {
+    font-size: 3.5rem;
+  }
+
+  .card {
+    padding: 30px;
+  }
+}
