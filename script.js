@@ -2,7 +2,7 @@ const weatherform = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
 
-const apiKey = "b9f0392d8cb9cc29736b57a141e7f418";
+const apiKey = "yourkey";
 
 weatherform.addEventListener("submit", async (event) => {
   event.preventDefault(); // we do not want to refresh page
